@@ -1,10 +1,12 @@
-from bs4 import BeautifulSoup
+import telebot
 
-import requests
+# from bs4 import BeautifulSoup
 
-html = requests.get("https://www.furg.br/estudantes/cardapio-ru/restaurante-universitario-i").content
+# import requests
 
-soup = BeautifulSoup(html, 'html.parser')
+# html = requests.get("https://www.furg.br/estudantes/cardapio-ru/restaurante-universitario-i").content
+
+# soup = BeautifulSoup(html, 'html.parser')
 
 # print(soup.prettify())
 
