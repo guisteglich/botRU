@@ -5,7 +5,7 @@ import telebot
 
 # from web import get_time
 
-CHAVE_API = "5230582028:AAEYZ0r4jNv1nO0tHqwZa1NP7r3qyq80oZ4"
+
 # html = requests.get("https://www.furg.br/estudantes/cardapio-ru/restaurante-universitario-i").content
 # soup = BeautifulSoup(html, 'html.parser')
 
@@ -18,7 +18,6 @@ bot = telebot.TeleBot(CHAVE_API)
 
 @bot.message_handler(commands=["cardapio"])
 def response_to_menu(message):
-    print(message)
     bot.send_message(message.from_user.id, "o cardápio de hoje é sopa.")
 
 def verify(message):
