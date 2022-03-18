@@ -1,4 +1,3 @@
-import re
 from bs4 import BeautifulSoup
 from split_time import split
 
@@ -26,13 +25,14 @@ x = valores.find_all(class_="pagina__conteudo")
 #     return x[0].prettify()
 
 
-def get_time(soup):
+def get_time():
     content = soup.find(class_="content-category")
     x = content.find_all(class_="pagina__conteudo")
 
     r = split(x[1])
 
-    return x[1]
+    # return x[1]
+    return r
 
 a = get_time(soup)
 
