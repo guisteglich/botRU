@@ -3,7 +3,7 @@ import telebot
 
 # import requests
 
-# from web import get_time
+from web import get_time
 
 
 # html = requests.get("https://www.furg.br/estudantes/cardapio-ru/restaurante-universitario-i").content
@@ -11,10 +11,10 @@ import telebot
 
 bot = telebot.TeleBot(CHAVE_API)
 
-# @bot.message_handler(commands=["horarios"])
-# def response_to_time(message):
-#     time = get_time(soup)
-#     bot.reply_to(message, "Os horário são: {}".format(time))
+@bot.message_handler(commands=["horarios"])
+def response_to_time(message):
+    time = get_time()
+    bot.reply_to(message, "Os horário são: {}".format(time))
 
 @bot.message_handler(commands=["cardapio"])
 def response_to_menu(message):
