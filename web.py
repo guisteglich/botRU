@@ -1,38 +1,38 @@
-import telebot
+import re
+from bs4 import BeautifulSoup
+from split_time import split
 
-# from bs4 import BeautifulSoup
+import requests
 
-# import requests
+# html = requests.get("https://www.google.com").content
 
-# html = requests.get("https://www.furg.br/estudantes/cardapio-ru/restaurante-universitario-i").content
+html = requests.get("https://www.furg.br/estudantes/cardapio-ru/restaurante-universitario-i").content
 
-# soup = BeautifulSoup(html, 'html.parser')
+soup = BeautifulSoup(html, 'html.parser')
 
 # print(soup.prettify())
 
-# valores = soup.find(class_="content-category")
-# x = valores.find_all(class_="pagina__conteudo")
+valores = soup.find(class_="content-category")
+x = valores.find_all(class_="pagina__conteudo")
 
-# # print(valores.prettify())
+# print(valores.prettify())
 # print(x[1].prettify())
 
-def get_price(soup):
-    content = soup.find(class_="content-category")
-    x = content.find_all(class_="pagina__conteudo")
-    print(x[0].prettify())
+# def get_price(soup):
+#     content = soup.find(class_="content-category")
+#     x = content.find_all(class_="pagina__conteudo")
+#     print(x[0].prettify())
 
-    return x[0].prettify()
+#     return x[0].prettify()
 
 
 def get_time(soup):
     content = soup.find(class_="content-category")
     x = content.find_all(class_="pagina__conteudo")
-    list = []
-    for i in x[1]:
-        print(i)
-        list.append(i)
-    # print(x[1].prettify())
 
-    return list
+    r = split(x[1])
 
-get_time(soup)
+    return x[1]
+
+a = get_time(soup)
+
